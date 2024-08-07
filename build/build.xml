@@ -1,0 +1,22 @@
+<project>
+
+    <target name="clean">
+        <delete dir="../out"/>
+        <delete dir="../bin"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="../out/classes"/>
+        <javac srcdir="../src" destdir="../out/classes"/>
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="../bin/jar"/>
+        <jar destfile="../bin/jar/HelloCiCd.jar" basedir="../out/classes">
+            <manifest>
+                <attribute name="Main-Class" value="oata.HelloCiCd"/>
+            </manifest>
+        </jar>
+    </target>
+</project>
+
